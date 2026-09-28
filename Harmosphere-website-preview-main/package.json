@@ -1,0 +1,16 @@
+{
+  "name": "harmosphere", "private": true, "version": "0.1.0",
+  "workspaces": ["apps/*"],
+  "engines": { "node": ">=22.0.0" },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "dev": "concurrently -k -n api,web \"npm run dev -w @harmosphere/api\" \"npm run dev -w @harmosphere/web\"",
+    "dev:local": "concurrently -k -n api,web \"npm run dev:local -w @harmosphere/api\" \"npm run dev -w @harmosphere/web\"",
+    "build": "npm run build --workspaces",
+    "typecheck": "npm run typecheck --workspaces",
+    "test": "npm run test -w @harmosphere/api",
+    "test:e2e": "playwright test",
+    "db:migrate": "npm run db:migrate -w @harmosphere/api"
+  },
+  "devDependencies": { "concurrently": "^9.2.1", "typescript": "^5.9.3", "@types/node": "^24.0.0", "@playwright/test": "^1.56.0" }
+}

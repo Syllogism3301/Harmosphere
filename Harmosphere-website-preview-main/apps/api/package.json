@@ -1,0 +1,22 @@
+{
+  "name": "@harmosphere/api", "private": true, "version": "0.1.0",
+  "scripts": {
+    "dev": "tsx watch --env-file-if-exists=../../.env src/main.ts",
+    "dev:local": "tsx --env-file-if-exists=../../.env scripts/local.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node --env-file-if-exists=../../.env dist/main.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:migrate": "tsx --env-file-if-exists=../../.env src/database/migrate.ts"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.0", "@nestjs/core": "^11.1.0", "@nestjs/platform-express": "^11.1.0",
+    "@nestjs/jwt": "^11.0.0", "cookie-parser": "^1.4.7", "helmet": "^8.1.0",
+    "pg": "^8.16.3", "reflect-metadata": "^0.2.2", "rxjs": "^7.8.2",
+    "stripe": "^20.0.0", "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.3.14", "@types/cookie-parser": "^1.4.9", "@types/express": "^5.0.0",
+    "@types/pg": "^8.15.5", "tsx": "^4.20.6", "vitest": "^4.1.11", "supertest": "^7.1.0", "@types/supertest": "^6.0.3"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "@harmosphere/web", "private": true, "version": "0.1.0",
+  "scripts": { "dev": "next dev", "build": "next build", "start": "next start", "typecheck": "next typegen && tsc --noEmit" },
+  "dependencies": { "next": "^16.0.0", "react": "^19.2.0", "react-dom": "^19.2.0", "next-intl": "^4.5.0" },
+  "devDependencies": { "@types/react": "^19.2.0", "@types/react-dom": "^19.2.0" }
+}
